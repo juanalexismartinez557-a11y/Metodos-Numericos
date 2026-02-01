@@ -4,35 +4,36 @@
   <meta charset="UTF-8">
   <title>MediaPipe Face Mesh Demo</title>
   <style>
-  body {
-    display: flex;          /* Activa flexbox */
-    flex-direction: row;    /* Asegura disposición horizontal */
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;              /* Espacio entre video y canvas */
-    margin-top: 20px;
-  }
-  video, canvas {
-    border: 1px solid #ccc;
-    width: 640px;
-    height: 480px;
-  }
-</style>
-
-    video, canvas {
+    .container {
+      display: flex;          /* Activa flexbox */
+      flex-direction: row;    /* Horizontal */
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;              /* Espacio entre video y canvas */
+      margin-top: 20px;
+    }
+    video {
+      width: 640px;
+      height: 480px;
+      border: 1px solid #ccc;
+    }
+    canvas {
+      width: 640px;
+      height: 480px;
       border: 1px solid #ccc;
     }
   </style>
   <!-- Importa MediaPipe FaceMesh -->
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
 </head>
 <body>
-  <!-- Video de la cámara -->
-  <video id="video" autoplay playsinline></video>
-  <!-- Canvas para dibujar los puntos -->
-  <canvas id="output" width="640" height="480"></canvas>
+  <div class="container">
+    <!-- Video de la cámara -->
+    <video id="video" autoplay playsinline></video>
+    <!-- Canvas para dibujar los puntos -->
+    <canvas id="output" width="640" height="480"></canvas>
+  </div>
 
   <script>
     const videoElement = document.getElementById('video');
@@ -86,4 +87,3 @@
   </script>
 </body>
 </html>
-
